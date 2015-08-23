@@ -30,19 +30,17 @@ public void draw()
 {
 
   fill(theColor);
-  fill(255);
   noStroke();
-  if(verticalE >= 1)
-    verticalE = .999999999f;
-  if(verticalE <= -1)
-    verticalE = -.9999999f;
+  // if(verticalE >= 1)
+  //   verticalE = .999999999;
+  // if(verticalE <= -1)
+  //   verticalE = -.9999999;
   
   if(mousePressed == true && mouseY <= 480)
   {
     for(int i = 0; i < 10; i++)
     {
       float theta = random(0,2*PI);
-      //double d2 = Math.random() * (double)this.nSize * (1.0 / (1.0 - this.dVerticalE * Math.sin(d)));
       float radius = random(0,radiusSize)*1.0f/(1.0f-verticalE*sin(theta));
       int x = mouseX + PApplet.parseInt(cos(theta)*radius);
       int y = mouseY + PApplet.parseInt(sin(theta)*radius);
@@ -59,10 +57,10 @@ public void draw()
   stroke(0);
   rect(0,470,640,20);
   fill(255);
-  if(verticalE == .999999999f)
-    verticalE = 1;
-  if(verticalE == -.9999999f)
-    verticalE = -1;
+  // if(verticalE > .9)
+  //   verticalE = 1;
+  // if(verticalE < -.9)
+  //   verticalE = -1;
   text("eccentricity " + (PApplet.parseInt(verticalE*10 + .0000001f)/10.0f), 320, 485);
 }
 
@@ -72,10 +70,10 @@ public void keyPressed()
    mirrorsOn = !mirrorsOn;
   else if(key == 'e')
    background(0);
-  else if(key == '+' && verticalE > -1)
-    verticalE-=.1f;
-  else if(key == '-' && verticalE < 1)
-    verticalE+=.1f;  
+  else if(key == '+' && verticalE < 1)
+    verticalE+=.1f;
+  else if(key == '-' && verticalE > -1)
+    verticalE-=.1f;  
 }
 public void mouseWheel(MouseEvent event) {
   if(event.getCount() < 0 && verticalE > -1)

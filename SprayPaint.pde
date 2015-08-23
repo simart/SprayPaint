@@ -15,10 +15,10 @@ void draw()
 
   fill(theColor);
   noStroke();
-  if(verticalE >= 1)
-    verticalE = .999999999;
-  if(verticalE <= -1)
-    verticalE = -.9999999;
+  // if(verticalE >= 1)
+  //   verticalE = .999999999;
+  // if(verticalE <= -1)
+  //   verticalE = -.9999999;
   
   if(mousePressed == true && mouseY <= 480)
   {
@@ -41,10 +41,10 @@ void draw()
   stroke(0);
   rect(0,470,640,20);
   fill(255);
-  if(verticalE > .9)
-    verticalE = 1;
-  if(verticalE < -.9)
-    verticalE = -1;
+  // if(verticalE > .9)
+  //   verticalE = 1;
+  // if(verticalE < -.9)
+  //   verticalE = -1;
   text("eccentricity " + (int(verticalE*10 + .0000001)/10.0), 320, 485);
 }
 
@@ -54,10 +54,10 @@ void keyPressed()
    mirrorsOn = !mirrorsOn;
   else if(key == 'e')
    background(0);
-  else if(key == '+' && verticalE > -1)
-    verticalE-=.1;
-  else if(key == '-' && verticalE < 1)
-    verticalE+=.1;  
+  else if(key == '+' && verticalE < 1)
+    verticalE+=.1;
+  else if(key == '-' && verticalE > -1)
+    verticalE-=.1;  
 }
 void mouseWheel(MouseEvent event) {
   if(event.getCount() < 0 && verticalE > -1)
