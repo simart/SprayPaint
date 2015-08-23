@@ -14,7 +14,6 @@ void draw()
 {
 
   fill(theColor);
-  fill(255);
   noStroke();
   if(verticalE >= 1)
     verticalE = .999999999;
@@ -26,7 +25,6 @@ void draw()
     for(int i = 0; i < 10; i++)
     {
       float theta = random(0,2*PI);
-      //double d2 = Math.random() * (double)this.nSize * (1.0 / (1.0 - this.dVerticalE * Math.sin(d)));
       float radius = random(0,radiusSize)*1.0/(1.0-verticalE*sin(theta));
       int x = mouseX + int(cos(theta)*radius);
       int y = mouseY + int(sin(theta)*radius);
