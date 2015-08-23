@@ -15,10 +15,10 @@ void draw()
 
   fill(theColor);
   noStroke();
-  // if(verticalE >= 1)
-  //   verticalE = .9999999;
-  // if(verticalE <= -1)
-  //   verticalE = -.9999999;
+  if(verticalE >= 1)
+    verticalE = .9999999;
+  if(verticalE <= -1)
+    verticalE = -.9999999;
   
   if(mousePressed == true && mouseY <= 480)
   {
@@ -41,10 +41,10 @@ void draw()
   stroke(0);
   rect(0,470,640,20);
   fill(255);
-  // if(verticalE > .9)
-  //   verticalE = 1;
-  // if(verticalE < -.9)
-  //   verticalE = -1;
+  if(verticalE > .9)
+    verticalE = 1;
+  if(verticalE < -.9)
+    verticalE = -1;
   text("eccentricity " + (int(verticalE*10)/10.0), 320, 485);
 }
 
