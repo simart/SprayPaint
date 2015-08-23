@@ -16,6 +16,11 @@ void draw()
   fill(theColor);
   fill(255);
   noStroke();
+  if(verticalE > 1)
+    verticalE = 1;
+  if(verticalE < -1)
+    verticalE = -1;
+  
   if(mousePressed == true && mouseY <= 480)
   {
     for(int i = 0; i < 10; i++)
