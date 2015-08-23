@@ -41,9 +41,9 @@ void draw()
   stroke(0);
   rect(0,470,640,20);
   fill(255);
-  if(verticalE == .999999999)
+  if(verticalE > .9)
     verticalE = 1;
-  if(verticalE == -.9999999)
+  if(verticalE < -.9)
     verticalE = -1;
   text("eccentricity " + (int(verticalE*10 + .0000001)/10.0), 320, 485);
 }
