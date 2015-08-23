@@ -31,10 +31,10 @@ public void draw()
 
   fill(theColor);
   noStroke();
-  // if(verticalE >= 1)
-  //   verticalE = .999999999;
-  // if(verticalE <= -1)
-  //   verticalE = -.9999999;
+  if(verticalE >= 1)
+    verticalE = .9999999f;
+  if(verticalE <= -1)
+    verticalE = -.9999999f;
   
   if(mousePressed == true && mouseY <= 480)
   {
@@ -57,10 +57,10 @@ public void draw()
   stroke(0);
   rect(0,470,640,20);
   fill(255);
-  // if(verticalE > .9)
-  //   verticalE = 1;
-  // if(verticalE < -.9)
-  //   verticalE = -1;
+  if(verticalE > .9f)
+    verticalE = 1;
+  if(verticalE < -.9f)
+    verticalE = -1;
   text("eccentricity " + (PApplet.parseInt(verticalE*10 + .0000001f)/10.0f), 320, 485);
 }
 
